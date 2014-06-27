@@ -149,9 +149,10 @@ sub cgi_editpage ($$) {
 	$form->field(name => "subpage", type => 'hidden');
 	$form->field(name => "page", value => $page, force => 1);
 	$form->field(name => "type", value => $type, force => 1);
-	$form->field(name => "editmessage", type => "text", size => 80);
+	$form->field(name => "editmessage", type => "text", size => 80, class => "form-control",
+        placeholder => "Optional description of this change");
 	$form->field(name => "editcontent", type => "textarea", rows => 20,
-		cols => 80);
+		cols => 80, class => "form-control");
 	$form->tmpl_param("can_commit", $config{rcs});
 	$form->tmpl_param("helponformattinglink",
 		htmllink($page, $page, "ikiwiki/formatting",
